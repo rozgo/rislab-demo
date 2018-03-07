@@ -15,6 +15,7 @@ var hierarchy =
       [ "platforms::threads::StateEstimation", "d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html", null ],
       [ "platforms::threads::TeleopOverride", "df/d29/classplatforms_1_1threads_1_1TeleopOverride.html", null ]
     ] ],
+    [ "containers::ControlVariables", "d7/d41/classcontainers_1_1ControlVariables.html", null ],
     [ "PlatformFactory", null, [
       [ "platforms::RisQuadcopterSimFactory", "d1/de2/classplatforms_1_1RisQuadcopterSimFactory.html", null ]
     ] ]
