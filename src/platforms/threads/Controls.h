@@ -5,6 +5,7 @@
 #include <string>
 
 #include "madara/threads/BaseThread.h"
+#include "../../containers/ControlVariables.h"
 
 namespace platforms
 {
@@ -40,6 +41,9 @@ namespace platforms
     private:
       /// data plane if we want to access the knowledge base
       madara::knowledge::KnowledgeBase data_;
+
+      /// control variables for staged knowledge base access
+      ::containers::ControlVariables control_vars_;
     };
   } // end namespace threads
 } // end namespace platforms

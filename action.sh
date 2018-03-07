@@ -66,13 +66,14 @@ INSTALL_DIR=`pwd`
 SCRIPTS_DIR=`dirname $0`
 
 # just in case we're in git commits and empty directories were discarded
-mkdir $SCRIPTS_DIR/src/algorithms
-mkdir $SCRIPTS_DIR/src/algorithms/threads
-mkdir $SCRIPTS_DIR/src/filters
-mkdir $SCRIPTS_DIR/src/platforms
-mkdir $SCRIPTS_DIR/src/platforms/threads
-mkdir $SCRIPTS_DIR/src/threads
-mkdir $SCRIPTS_DIR/src/transports
+[ -d $SCRIPTS_DIR/src/algorithms ] || mkdir $SCRIPTS_DIR/src/algorithms
+[ -d $SCRIPTS_DIR/src/algorithms/threads ] || mkdir $SCRIPTS_DIR/src/algorithms/threads
+[ -d $SCRIPTS_DIR/src/containers ] || mkdir $SCRIPTS_DIR/src/containers
+[ -d $SCRIPTS_DIR/src/filters ] || mkdir $SCRIPTS_DIR/src/filters
+[ -d $SCRIPTS_DIR/src/platforms ] || mkdir $SCRIPTS_DIR/src/platforms
+[ -d $SCRIPTS_DIR/src/platforms/threads ] || mkdir $SCRIPTS_DIR/src/platforms/threads
+[ -d $SCRIPTS_DIR/src/threads ] || mkdir $SCRIPTS_DIR/src/threads
+[ -d $SCRIPTS_DIR/src/transports ] || mkdir $SCRIPTS_DIR/src/transports
 
 if [ -z $CORES ] ; then
   echo "CORES unset, so setting it to default of 1"

@@ -25,6 +25,12 @@ platforms::threads::Controls::init (knowledge::KnowledgeBase & knowledge)
 {
   // point our data plane to the knowledge base initializing the thread
   data_ = knowledge;
+
+  // initialize control_vars_;
+  control_vars_.init (knowledge);
+
+  std::vector <double> orientation = {72.0010, -82.1346, 100.2346};
+  knowledge.set (".orientation", orientation);
 }
 
 /**
@@ -36,14 +42,41 @@ platforms::threads::Controls::init (knowledge::KnowledgeBase & knowledge)
 void
 platforms::threads::Controls::run (void)
 {
-  /**
-   * the MADARA logger is thread-safe, fast, and allows for specifying
-   * various options like output files and multiple output targets (
-   * e.g., std::cerr, a system log, and a thread_output.txt file). You
-   * can create your own custom log levels or loggers as well.
-   **/
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
-    gams::loggers::LOG_MAJOR,
+    gams::loggers::LOG_MINOR,
     "platforms::threads::Controls::run:" 
-    " executing\n");
+    " reading from knowledge base\n");
+  control_vars_.read ();
+
+  /**
+   * After this point, we can use our publicly accessible control_vars vars.
+   * This access pattern is called read-compute-write, and it allows for
+   * consistent access to the knowledge base. It is very difficult to have
+   * race conditions while using this pattern. The state you read, is the
+   * state you compute in. The state you write is guarded with the mutex
+   * to the knowledge base and applied as a complete transaction of changes.
+   **/
+
+  if (control_vars_.orientation.size () == 3)
+  {
+    madara_logger_ptr_log (gams::loggers::global_logger.get (),
+      gams::loggers::LOG_ALWAYS,
+      "platforms::threads::Controls::run:" 
+      " orientation = [%.4f, %.4f, %.4f]\n",
+        control_vars_.orientation[0],
+        control_vars_.orientation[1],
+        control_vars_.orientation[2]);
+  }
+
+  /**
+   * After this point, we write what's in our local vars to the knowedge base,
+   * even if there were no changes. This marks the value as modified to send
+   * to others
+   **/
+
+  madara_logger_ptr_log (gams::loggers::global_logger.get (),
+    gams::loggers::LOG_MINOR,
+    "platforms::threads::Controls::run:" 
+    " writing to knowledge base\n");
+  control_vars_.write ();
 }
