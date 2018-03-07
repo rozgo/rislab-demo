@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['takeoff',['takeoff',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a5be21d636a27f4814e6b0ec24f4f9dd7',1,'platforms::RisQuadcopterSim']]],
-  ['teleopoverride',['TeleopOverride',['../df/d29/classplatforms_1_1threads_1_1TeleopOverride.html',1,'platforms::threads']]],
-  ['teleopoverride',['TeleopOverride',['../df/d29/classplatforms_1_1threads_1_1TeleopOverride.html#ab46b9db2ef0c9edced99886a2701ce6a',1,'platforms::threads::TeleopOverride']]],
-  ['teleopoverride_2eh',['TeleopOverride.h',['../d8/d36/TeleopOverride_8h.html',1,'']]],
-  ['threader_5f',['threader_',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a2dfa8784acb73f96adcf7e52a6e758a9',1,'platforms::RisQuadcopterSim']]],
-  ['threads',['threads',['../d5/d58/namespacethreads.html',1,'']]]
+  ['sense',['sense',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a0cb666c5cb86952b0ab05cdbe8967f5e',1,'platforms::RisQuadcopterSim']]],
+  ['set_5fmove_5fspeed',['set_move_speed',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a9b2a632696c9e9d9c87bfa411fc0d898',1,'platforms::RisQuadcopterSim']]],
+  ['stateestimation',['StateEstimation',['../d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html#a6761eb78b4131645da125f4ab1611168',1,'platforms::threads::StateEstimation']]],
+  ['stateestimation',['StateEstimation',['../d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html',1,'platforms::threads']]],
+  ['stateestimation_2eh',['StateEstimation.h',['../d9/d90/StateEstimation_8h.html',1,'']]],
+  ['stop_5fmove',['stop_move',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a6cc7f7983567b2606b539ea9da17bee4',1,'platforms::RisQuadcopterSim']]]
 ];
