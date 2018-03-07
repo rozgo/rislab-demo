@@ -18,6 +18,14 @@ namespace algorithms
 }
 
 /**
+ * @namespace containers
+ * Contains managed C++ containers that map between C++ variables and knowledge variables
+ **/
+namespace containers
+{
+}
+
+/**
  * @namespace platforms
  * Contains platform drivers and platform threads
  **/
