@@ -1,6 +1,11 @@
 var NAVTREE =
 [
   [ "RISLab", "index.html", [
+    [ "Welcome to RisLab's Hivemind Demo!", "index.html", [
+      [ "Prerequisites (MADARA/GAMS)", "index.html#prereqs", null ],
+      [ "Hivemind Introduction", "index.html#hivemind", null ],
+      [ "Rislab Quadcopter Sim Platform", "index.html#rislabquad", null ]
+    ] ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
@@ -15,7 +20,13 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

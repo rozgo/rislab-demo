@@ -135,16 +135,16 @@ Collaboration diagram for algorithms::ExploreGpsDeniedFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af45f4acdbf46349f2231b377e9f6e7c2"><td class="memItemLeft" align="right" valign="top">virtual gams::algorithms::BaseAlgorithm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/classalgorithms_1_1ExploreGpsDeniedFactory.html#af45f4acdbf46349f2231b377e9f6e7c2">create</a> (const madara::knowledge::KnowledgeMap &amp;args, madara::knowledge::KnowledgeBase *knowledge, gams::platforms::BasePlatform *platform, gams::variables::Sensors *sensors, gams::variables::Self *self, gams::variables::Agents *agents)</td></tr>
-<tr class="memdesc:af45f4acdbf46349f2231b377e9f6e7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/d52/classalgorithms_1_1ExploreGpsDenied.html" title="Explores a GPS-denied area with platform-specific feedback from depth cameras. ">ExploreGpsDenied</a> algorithm.  <a href="#af45f4acdbf46349f2231b377e9f6e7c2">More...</a><br /></td></tr>
-<tr class="separator:af45f4acdbf46349f2231b377e9f6e7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37550439ee3d30a95ea74ed09f8d74f"><td class="memItemLeft" align="right" valign="top">virtual gams::algorithms::BaseAlgorithm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/classalgorithms_1_1ExploreGpsDeniedFactory.html#ae37550439ee3d30a95ea74ed09f8d74f">create</a> (const madara::knowledge::KnowledgeMap &amp;args, madara::knowledge::KnowledgeBase *knowledge, gams::platforms::BasePlatform *<a class="el" href="../../d1/d47/controller_8cpp.html#a3e02bcf5e2f33130cd1555044ed3705b">platform</a>, gams::variables::Sensors *sensors, gams::variables::Self *self, gams::variables::Agents *agents)</td></tr>
+<tr class="memdesc:ae37550439ee3d30a95ea74ed09f8d74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/d52/classalgorithms_1_1ExploreGpsDenied.html" title="Explores a GPS-denied area with platform-specific feedback from depth cameras. ">ExploreGpsDenied</a> algorithm.  <a href="#ae37550439ee3d30a95ea74ed09f8d74f">More...</a><br /></td></tr>
+<tr class="separator:ae37550439ee3d30a95ea74ed09f8d74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A factory class for creating <a class="el" href="../../d9/d52/classalgorithms_1_1ExploreGpsDenied.html" title="Explores a GPS-denied area with platform-specific feedback from depth cameras. ">ExploreGpsDenied</a> Algorithms at run-time. </p>
 
 <p>Definition at line <a class="el" href="../../d0/d4d/ExploreGpsDenied_8h_source.html#l00065">65</a> of file <a class="el" href="../../d0/d4d/ExploreGpsDenied_8h_source.html">ExploreGpsDenied.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af45f4acdbf46349f2231b377e9f6e7c2"></a>
+<a class="anchor" id="ae37550439ee3d30a95ea74ed09f8d74f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -152,7 +152,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual gams::algorithms::BaseAlgorithm* algorithms::ExploreGpsDeniedFactory::create </td>
+          <td class="memname">gams::algorithms::BaseAlgorithm * algorithms::ExploreGpsDeniedFactory::create </td>
           <td>(</td>
           <td class="paramtype">const madara::knowledge::KnowledgeMap &amp;&#160;</td>
           <td class="paramname"><em>args</em>, </td>
@@ -212,11 +212,15 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>Note the usage of logger macros with the GAMS global logger. This is highly optimized and is just an integer check if the log level is not high enough to print the message</p>
+
+<p>Definition at line <a class="el" href="../../db/dff/ExploreGpsDenied_8cpp_source.html#l00007">7</a> of file <a class="el" href="../../db/dff/ExploreGpsDenied_8cpp_source.html">ExploreGpsDenied.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/algorithms/<a class="el" href="../../d0/d4d/ExploreGpsDenied_8h_source.html">ExploreGpsDenied.h</a></li>
+<li>src/algorithms/<a class="el" href="../../db/dff/ExploreGpsDenied_8cpp_source.html">ExploreGpsDenied.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -224,7 +228,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d55/namespacealgorithms.html">algorithms</a></li><li class="navelem"><a class="el" href="../../d5/da6/classalgorithms_1_1ExploreGpsDeniedFactory.html">ExploreGpsDeniedFactory</a></li>
-    <li class="footer">Generated on Wed Mar 7 2018 18:43:58 for RISLab by
+    <li class="footer">Generated on Thu Mar 8 2018 02:56:55 for RISLab by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

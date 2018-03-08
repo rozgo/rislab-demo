@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['pause_5fmove',['pause_move',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a1f96ed19aff1839c68a66c1b4c3498b8',1,'platforms::RisQuadcopterSim']]],
-  ['plan',['plan',['../d9/d52/classalgorithms_1_1ExploreGpsDenied.html#a678741da69c5fb4e53add3098ebb7e38',1,'algorithms::ExploreGpsDenied']]],
-  ['pose',['pose',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a006c0a26b84df301f4a1a803663f2f82',1,'platforms::RisQuadcopterSim']]]
+  ['land',['land',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a46be490cd9f85bce7a2fa9ef7460e198',1,'platforms::RisQuadcopterSim']]],
+  ['loop_5ftime',['loop_time',['../d1/d47/controller_8cpp.html#a47145e0b6a276e0d4be8e3c04d84ceff',1,'controller.cpp']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['orientation',['orientation',['../d7/d41/classcontainers_1_1ControlVariables.html#a22c01dedb12a6783b9e6faf1e608cbff',1,'containers::ControlVariables']]],
-  ['orientation_5f',['orientation_',['../d7/d41/classcontainers_1_1ControlVariables.html#afb459eb5b6ba433abbb247050d28f854',1,'containers::ControlVariables']]]
+  ['gps_5fframe',['gps_frame',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a678c55e4424861a84ddcfe02634f7935',1,'platforms::RisQuadcopterSim']]]
 ];

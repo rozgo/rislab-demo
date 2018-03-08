@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['_7econtrols',['~Controls',['../d4/ded/classplatforms_1_1threads_1_1Controls.html#a2d75d41f6b532cdcee043c089d3e0991',1,'platforms::threads::Controls']]],
-  ['_7eexploregpsdenied',['~ExploreGpsDenied',['../d9/d52/classalgorithms_1_1ExploreGpsDenied.html#a6911aa23ef0b2496fae179206ffac167',1,'algorithms::ExploreGpsDenied']]],
-  ['_7emapping',['~Mapping',['../da/d3a/classplatforms_1_1threads_1_1Mapping.html#a313161fedefc4229a2b7543137314382',1,'platforms::threads::Mapping']]],
-  ['_7erisquadcoptersim',['~RisQuadcopterSim',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a828c0702950fd509994147197158b08b',1,'platforms::RisQuadcopterSim']]],
-  ['_7estateestimation',['~StateEstimation',['../d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html#a8a1ad5d0bae3fc1bd24f15bb2a366a8d',1,'platforms::threads::StateEstimation']]],
-  ['_7eteleopoverride',['~TeleopOverride',['../df/d29/classplatforms_1_1threads_1_1TeleopOverride.html#af4dac68c9da5dc5fc2b756d419752c69',1,'platforms::threads::TeleopOverride']]]
+  ['sense',['sense',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#ab18aa3693ad9f5f16520d8dbb7c5f50f',1,'platforms::RisQuadcopterSim']]],
+  ['set_5fmove_5fspeed',['set_move_speed',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#acde05a1035a37a9427eda7f33b7724e5',1,'platforms::RisQuadcopterSim']]],
+  ['stateestimation',['StateEstimation',['../d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html#a6761eb78b4131645da125f4ab1611168',1,'platforms::threads::StateEstimation']]],
+  ['stop_5fmove',['stop_move',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a1aa00da6a5a17aabcf8071bda7f61559',1,'platforms::RisQuadcopterSim']]]
 ];
