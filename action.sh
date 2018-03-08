@@ -59,6 +59,7 @@
 
 COMPILE=0
 COMPILE_VREP=0
+PREREQS=0
 RUN=0
 VERBOSE=0
 VREP=0
@@ -88,7 +89,8 @@ do
     COMPILE=1
   elif [ "$var" = "compile-vrep" ]; then
     COMPILE_VREP=1
-    COMPILE=1
+  elif [ "$var" = "prereqs" ]; then
+    PREREQS=1
   elif [ "$var" = "run" ]; then
     RUN=1
   elif [ "$var" = "sim" ]; then
@@ -102,6 +104,7 @@ do
     echo "  args can be zero or more of the following, space delimited"
     echo "  compile         build the custom project"
     echo "  compile-vrep    compile with vrep support"
+    echo "  prereqs         apt-get doxygen and other prereqs"
     echo "  run|sim         run the simulation"
     echo "  verbose         print verbose information during this script"
     echo "  vrep            start vrep before running the simulation"
@@ -119,6 +122,10 @@ do
     exit
   fi
 done
+
+if [ $PREREQS -eq 1 ]; then
+  sudo apt-get install doxygen graphviz
+fi
 
 if [ $COMPILE -eq 1 ]; then
 
