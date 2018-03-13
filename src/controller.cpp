@@ -45,10 +45,6 @@ std::string platform ("RisQuadcopterSim");
 std::string algorithm ("debug");
 std::vector <std::string> accents;
 
-// controller variables
-double period (1.0);
-double loop_time (50.0);
-
 // madara commands from a file
 std::string madara_commands = "";
 
@@ -62,33 +58,42 @@ Integer num_agents (-1);
 // file path to save received files to
 std::string file_path;
 
+// controller settings for controller configuration
+gams::controllers::ControllerSettings controller_settings;
+
 void print_usage (char * prog_name)
 {
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
 "\nProgram summary for %s:\n\n" 
 "     Loop controller setup for gams\n" 
-" [-A |--algorithm type]        algorithm to start with\n" 
-" [-a |--accent type]           accent algorithm to start with\n" 
-" [-b |--broadcast ip:port]     the broadcast ip to send and listen to\n" 
-" [-d |--domain domain]         the knowledge domain to send and listen to\n" 
-" [-e |--rebroadcasts num]      number of hops for rebroadcasting messages\n" 
-" [-f |--logfile file]          log to a file\n" 
-" [-i |--id id]                 the id of this agent (should be non-negative)\n" 
-" [--madara-level level]        the MADARA logger level (0+, higher is higher detail)\n" 
-" [--gams-level level]          the GAMS logger level (0+, higher is higher detail)\n" 
-" [-L |--loop-time time]        time to execute loop\n"
-" [-m |--multicast ip:port]     the multicast ip to send and listen to\n" 
-" [-M |--madara-file <file>]    file containing madara commands to execute\n" 
-"                               multiple space-delimited files can be used\n" 
-" [-n |--num_agents <number>]   the number of agents in the swarm\n" 
-" [-o |--host hostname]         the hostname of this process (def:localhost)\n" 
-" [-p |--platform type]         platform for loop (vrep, dronerk)\n" 
-" [-P |--period period]         time, in seconds, between control loop executions\n" 
-" [-q |--queue-length length]   length of transport queue in bytes\n" 
-" [-r |--reduced]               use the reduced message header\n" 
-" [-t |--target path]           file system location to save received files (NYI)\n" 
-" [-u |--udp ip:port]           a udp ip to send to (first is self to bind to)\n" 
+" [-A |--algorithm type]        algorithm to start with\n" \
+" [-a |--accent type]           accent algorithm to start with\n" \
+" [-b |--broadcast ip:port]     the broadcast ip to send and listen to\n" \
+" [--checkpoint-on-loop]        save checkpoint after each control loop\n" \
+" [--checkpoint-on-send]        save checkpoint before send of updates\n" \
+" [-c |--checkpoint prefix]     the filename prefix for checkpointing\n" \
+" [-d |--domain domain]         the knowledge domain to send and listen to\n" \
+" [-e |--rebroadcasts num]      number of hops for rebroadcasting messages\n" \
+" [-f |--logfile file]          log to a file\n" \
+" [-i |--id id]                 the id of this agent (should be non-negative)\n" \
+" [--madara-level level]        the MADARA logger level (0+, higher is higher detail)\n" \
+" [--gams-level level]          the GAMS logger level (0+, higher is higher detail)\n" \
+" [-L |--loop-time time]        time to execute loop\n"\
+" [--loop-hertz hz]             hertz to run the MAPE loop\n"\
+" [-m |--multicast ip:port]     the multicast ip to send and listen to\n" \
+" [-M |--madara-file <file>]    file containing madara commands to execute\n" \
+"                               multiple space-delimited files can be used\n" \
+" [-n |--num_agents <number>]   the number of agents in the swarm\n" \
+" [-o |--host hostname]         the hostname of this process (def:localhost)\n" \
+" [-p |--platform type]         platform for loop (vrep, dronerk)\n" \
+" [-P |--period period]         time, in seconds, between control loop executions\n" \
+" [-q |--queue-length length]   length of transport queue in bytes\n" \
+" [-r |--reduced]               use the reduced message header\n" \
+" [-s |--send-hertz hertz]      send hertz rate for modifications\n" \
+" [-t |--target path]           file system location to save received files (NYI)\n" \
+" [-u |--udp ip:port]           a udp ip to send to (first is self to bind to)\n" \
+" [--zmq proto:ip:port]         specifies a 0MQ transport endpoint\n"
 "\n",
         prog_name);
   exit (0);
@@ -130,6 +135,27 @@ void handle_arguments (int argc, char ** argv)
         print_usage (argv[0]);
 
       ++i;
+    }
+    else if (arg1 == "-c" || arg1 == "--checkpoint")
+    {
+      if (i + 1 < argc && argv[i + 1][0] != '-')
+      {
+        controller_settings.checkpoint_prefix = argv[i + 1];
+      }
+      else
+        print_usage (argv[0]);
+
+      ++i;
+    }
+    else if (arg1 == "--checkpoint-on-loop")
+    {
+      controller_settings.checkpoint_strategy =
+        gams::controllers::CHECKPOINT_EVERY_LOOP;
+    }
+    else if (arg1 == "--checkpoint-on-send")
+    {
+      controller_settings.checkpoint_strategy =
+        gams::controllers::CHECKPOINT_EVERY_SEND;
     }
     else if (arg1 == "-d" || arg1 == "--domain")
     {
@@ -210,7 +236,19 @@ void handle_arguments (int argc, char ** argv)
       if (i + 1 < argc && argv[i + 1][0] != '-')
       {
         std::stringstream buffer (argv[i + 1]);
-        buffer >> loop_time;
+        buffer >> controller_settings.run_time;
+      }
+      else
+        print_usage (argv[0]);
+
+      ++i;
+    }
+    else if (arg1 == "--loop-hertz")
+    {
+      if (i + 1 < argc && argv[i + 1][0] != '-')
+      {
+        std::stringstream buffer (argv[i + 1]);
+        buffer >> controller_settings.loop_hertz;
       }
       else
         print_usage (argv[0]);
@@ -286,7 +324,9 @@ void handle_arguments (int argc, char ** argv)
       if (i + 1 < argc && argv[i + 1][0] != '-')
       {
         std::stringstream buffer (argv[i + 1]);
-        buffer >> period;
+        buffer >> controller_settings.loop_hertz;
+
+        controller_settings.loop_hertz = 1 / controller_settings.loop_hertz;
       }
       else
         print_usage (argv[0]);
@@ -324,6 +364,18 @@ void handle_arguments (int argc, char ** argv)
       {
         settings.hosts.push_back (argv[i + 1]);
         settings.type = madara::transport::UDP;
+      }
+      else
+        print_usage (argv[0]);
+
+      ++i;
+    }
+    else if (arg1 == "--zmq")
+    {
+      if (i + 1 < argc && argv[i + 1][0] != '-')
+      {
+        settings.hosts.push_back (argv[i + 1]);
+        settings.type = madara::transport::ZMQ;
       }
       else
         print_usage (argv[0]);
@@ -381,7 +433,7 @@ int main (int argc, char ** argv)
     gams::loggers::global_logger->set_level (gams_debug_level);
   }
 
-  controllers::BaseController controller (knowledge);
+  controllers::BaseController controller (knowledge, controller_settings);
   madara::threads::Threader threader (knowledge);
 
   // initialize variables and function stubs
@@ -472,7 +524,7 @@ int main (int argc, char ** argv)
    **/
   
   // run a mape loop for algorithm and platform control
-  controller.run (period, loop_time);
+  controller.run ();
 
   // terminate all threads after the controller
   threader.terminate ();
