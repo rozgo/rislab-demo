@@ -22,6 +22,8 @@
 // end transport includes
 
 // begin filter includes
+#include "filters/IntelligentReceiveFilter.h"
+#include "filters/IntelligentSendFilter.h"
 // end filter includes
 
 // END DO NOT DELETE THIS SECTION
@@ -360,9 +362,11 @@ int main (int argc, char ** argv)
   madara::knowledge::KnowledgeBase knowledge;
   
   // begin on receive filters
+  settings.add_receive_filter (new filters::IntelligentReceiveFilter ());
   // end on receive filters
   
   // begin on send filters
+  settings.add_send_filter (new filters::IntelligentSendFilter ());
   // end on send filters
   
   // if you only want to use custom transports, delete following

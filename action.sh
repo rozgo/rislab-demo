@@ -59,6 +59,7 @@
 
 COMPILE=0
 COMPILE_VREP=0
+DOCS=0
 PREREQS=0
 RUN=0
 VERBOSE=0
@@ -89,6 +90,8 @@ do
     COMPILE=1
   elif [ "$var" = "compile-vrep" ]; then
     COMPILE_VREP=1
+  elif [ "$var" = "docs" ]; then
+    DOCS=1
   elif [ "$var" = "prereqs" ]; then
     PREREQS=1
   elif [ "$var" = "run" ]; then
@@ -148,7 +151,7 @@ if [ $COMPILE -eq 1 ]; then
     echo "Building project..."
   fi
 
-  make vrep=$COMPILE_VREP docs=1 -j $CORES
+  make vrep=$COMPILE_VREP docs=$DOCS -j $CORES
   
 fi
   

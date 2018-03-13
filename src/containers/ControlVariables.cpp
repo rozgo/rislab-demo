@@ -33,7 +33,7 @@ containers::ControlVariables::read (void)
     // lock the context for consistency
     madara::knowledge::ContextGuard guard (*context_);
 
-    // update user-facing variables
+    // update user-facing variables. DO NOT REMOVE COMMENT
     imu_sigma_accel = imu_sigma_accel_.to_record ().to_doubles ();
     orientation = orientation_.to_record ().to_doubles ();
     position = position_.to_record ().to_doubles ();
@@ -48,7 +48,7 @@ containers::ControlVariables::write (void)
     // lock the context for consistency
     madara::knowledge::ContextGuard guard (*context_);
 
-    // update knowledge base
+    // update knowledge base. DO NOT REMOVE COMMENT
     imu_sigma_accel_.set (imu_sigma_accel);
     orientation_.set (orientation);
     position_.set (position);
@@ -58,7 +58,7 @@ containers::ControlVariables::write (void)
 void
 containers::ControlVariables::modify (void)
 {
-  // mark containers as modified so the values are resent
+  // mark containers as modified so the values are resent. DO NOT REMOVE COMMENT
   imu_sigma_accel_.modify ();
   orientation_.modify ();
   position_.modify ();

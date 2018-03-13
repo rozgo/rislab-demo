@@ -26,6 +26,14 @@ namespace containers
 }
 
 /**
+ * @namespace filters
+ * Contains filters that may shape traffic on-send or on-receive
+ **/
+namespace filters
+{
+}
+
+/**
  * @namespace platforms
  * Contains platform drivers and platform threads
  **/

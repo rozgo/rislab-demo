@@ -75,6 +75,7 @@ namespace containers
     /// imu_sigma_accel that directly interfaces to the KnowledgeBase
     madara::knowledge::containers::NativeDoubleArray position_;
 
+
     /// unmanaged context for locking. The knowledge base should stay in scope
     madara::knowledge::ThreadSafeContext * context_;
   };
