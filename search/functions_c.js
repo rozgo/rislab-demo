@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['read',['read',['../d7/d41/classcontainers_1_1ControlVariables.html#a77de8d6ca6222a53d709f59a85d39aa7',1,'containers::ControlVariables']]],
-  ['risquadcoptersim',['RisQuadcopterSim',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#a1e958e34ea84bcae74ad6c09a880675e',1,'platforms::RisQuadcopterSim']]],
-  ['rotate',['rotate',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#ab53de50a86ff9f3c7eb7547cab86180a',1,'platforms::RisQuadcopterSim']]],
-  ['run',['run',['../d4/ded/classplatforms_1_1threads_1_1Controls.html#a497383ef1236b1e5d5cf72e4d1726514',1,'platforms::threads::Controls::run()'],['../da/d3a/classplatforms_1_1threads_1_1Mapping.html#a902de510327478b5ed37384afe6d1527',1,'platforms::threads::Mapping::run()'],['../d4/dfb/classplatforms_1_1threads_1_1StateEstimation.html#affac805117bc83fc429dcac77f5cc68e',1,'platforms::threads::StateEstimation::run()'],['../df/d29/classplatforms_1_1threads_1_1TeleopOverride.html#a59131fa2bafe7eb7d72277c3d3523563',1,'platforms::threads::TeleopOverride::run()']]]
+  ['pause_5fmove',['pause_move',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#aead193eb1a5caad3ddcfb76d224392b7',1,'platforms::RisQuadcopterSim']]],
+  ['plan',['plan',['../d9/d52/classalgorithms_1_1ExploreGpsDenied.html#a75db1a673ac166764f46f92788c67fb9',1,'algorithms::ExploreGpsDenied']]],
+  ['platform',['platform',['../d1/d47/controller_8cpp.html#a3e02bcf5e2f33130cd1555044ed3705b',1,'controller.cpp']]],
+  ['pose',['pose',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#ab7c1c772aa9c91b8d54333fa7b90d9ab',1,'platforms::RisQuadcopterSim']]],
+  ['print_5fusage',['print_usage',['../d1/d47/controller_8cpp.html#a5724b5d5bd1fb93f9ae44b8d46b64328',1,'controller.cpp']]]
 ];

@@ -1,5 +1,9 @@
 var hierarchy =
 [
+    [ "AggregateFilter", null, [
+      [ "filters::IntelligentReceiveFilter", "df/d80/classfilters_1_1IntelligentReceiveFilter.html", null ],
+      [ "filters::IntelligentSendFilter", "d6/d72/classfilters_1_1IntelligentSendFilter.html", null ]
+    ] ],
     [ "AlgorithmFactory", null, [
       [ "algorithms::ExploreGpsDeniedFactory", "d5/da6/classalgorithms_1_1ExploreGpsDeniedFactory.html", null ]
     ] ],

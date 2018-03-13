@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write',['write',['../d7/d41/classcontainers_1_1ControlVariables.html#a869abf42ac8dcecdf7e69c3091b72aea',1,'containers::ControlVariables']]]
+  ['takeoff',['takeoff',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#ad5a45ad4b34ce18600b40f344e50912b',1,'platforms::RisQuadcopterSim']]],
+  ['teleopoverride',['TeleopOverride',['../df/d29/classplatforms_1_1threads_1_1TeleopOverride.html#ab46b9db2ef0c9edced99886a2701ce6a',1,'platforms::threads::TeleopOverride']]]
 ];

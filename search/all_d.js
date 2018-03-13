@@ -1,7 +1,6 @@
 var searchData=
 [
   ['pause_5fmove',['pause_move',['../d8/d98/classplatforms_1_1RisQuadcopterSim.html#aead193eb1a5caad3ddcfb76d224392b7',1,'platforms::RisQuadcopterSim']]],
-  ['period',['period',['../d1/d47/controller_8cpp.html#ad0138728c8a164cfcc75e08be9224af3',1,'controller.cpp']]],
   ['plan',['plan',['../d9/d52/classalgorithms_1_1ExploreGpsDenied.html#a75db1a673ac166764f46f92788c67fb9',1,'algorithms::ExploreGpsDenied']]],
   ['plat_5fset',['plat_set',['../d1/d47/controller_8cpp.html#a7f9805e384e72197c583a2d18af8d7c7',1,'controller.cpp']]],
   ['platform',['platform',['../d1/d47/controller_8cpp.html#a3e02bcf5e2f33130cd1555044ed3705b',1,'controller.cpp']]],

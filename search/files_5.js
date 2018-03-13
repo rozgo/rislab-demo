@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['stateestimation_2ecpp',['StateEstimation.cpp',['../dc/d48/StateEstimation_8cpp.html',1,'']]],
-  ['stateestimation_2eh',['StateEstimation.h',['../d9/d90/StateEstimation_8h.html',1,'']]]
+  ['risquadcoptersim_2ecpp',['RisQuadcopterSim.cpp',['../da/dd5/RisQuadcopterSim_8cpp.html',1,'']]],
+  ['risquadcoptersim_2eh',['RisQuadcopterSim.h',['../d2/dd0/RisQuadcopterSim_8h.html',1,'']]]
 ];

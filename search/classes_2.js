@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mapping',['Mapping',['../da/d3a/classplatforms_1_1threads_1_1Mapping.html',1,'platforms::threads']]]
+  ['intelligentreceivefilter',['IntelligentReceiveFilter',['../df/d80/classfilters_1_1IntelligentReceiveFilter.html',1,'filters']]],
+  ['intelligentsendfilter',['IntelligentSendFilter',['../d6/d72/classfilters_1_1IntelligentSendFilter.html',1,'filters']]]
 ];
