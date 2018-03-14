@@ -358,6 +358,18 @@ void handle_arguments (int argc, char ** argv)
 
       ++i;
     }
+    else if (arg1 == "-s" || arg1 == "--send-hertz")
+    {
+      if (i + 1 < argc)
+      {
+        std::stringstream buffer (argv[i + 1]);
+        buffer >> controller_settings.send_hertz;
+      }
+      else
+        print_usage (argv[0]);
+
+      ++i;
+    }
     else if (arg1 == "-u" || arg1 == "--udp")
     {
       if (i + 1 < argc && argv[i + 1][0] != '-')

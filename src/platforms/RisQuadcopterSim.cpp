@@ -54,10 +54,10 @@ platforms::RisQuadcopterSim::RisQuadcopterSim (
     status_.init_vars (*knowledge, get_id ());
     
     // create threads
-    threader_.run(1.0, "Controls", new threads::Controls());
+    threader_.run(0.2, "Controls", new threads::Controls());
     threader_.run(1.0, "Mapping", new threads::Mapping());
-    threader_.run(1.0, "StateEstimation", new threads::StateEstimation());
-    threader_.run(1.0, "TeleopOverride", new threads::TeleopOverride());
+    threader_.run(0.2, "StateEstimation", new threads::StateEstimation());
+    threader_.run(0.2, "TeleopOverride", new threads::TeleopOverride());
     // end create threads
     
     

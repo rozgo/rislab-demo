@@ -57,12 +57,30 @@ platforms::threads::Controls::run (void)
    * to the knowledge base and applied as a complete transaction of changes.
    **/
 
+  ++control_vars_.controls_clock;
+
+  /**
+   * In the Hivemind: Edge to Analytics deck, the Controls thread state
+   * machine is diagramed like this:
+   * 1) Access IMU and PID values
+   * 2) Access Position (control_vars_.position)
+   * 3) Access Orientation (control_vars_.orientation)
+   * 4) Project/predict Thrust (may require new variables in KB)
+   * 5) Modify Thrust (usually involves actuating a subsystem)
+   * 6) Update PID
+   * 7) Update IMU
+   * Exercise is to the think about how to implement this by accessing
+   * platform subsystems or knowledge base variables to communicate
+   * necessary information to other threads that depend on 
+   **/
+
   if (control_vars_.orientation.size () == 3)
   {
     madara_logger_ptr_log (gams::loggers::global_logger.get (),
       gams::loggers::LOG_ALWAYS,
-      "platforms::threads::Controls::run:" 
+      "platforms::threads::Controls::run: %d: " 
       " orientation = [%.4f, %.4f, %.4f]\n",
+        control_vars_.controls_clock,
         control_vars_.orientation[0],
         control_vars_.orientation[1],
         control_vars_.orientation[2]);

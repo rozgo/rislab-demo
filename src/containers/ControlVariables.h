@@ -64,6 +64,9 @@ namespace containers
     /// the position of the agent (x, y, z)
     std::vector<double> position;
 
+    /// a vector clock to count executions
+    int controls_clock;
+
   private:
 
     /// imu_sigma_accel that directly interfaces to the KnowledgeBase
@@ -74,6 +77,9 @@ namespace containers
 
     /// imu_sigma_accel that directly interfaces to the KnowledgeBase
     madara::knowledge::containers::NativeDoubleArray position_;
+
+    /// controls_clock that directly interfaces to the KnowledgeBase
+    madara::knowledge::containers::Integer controls_clock_;
 
 
     /// unmanaged context for locking. The knowledge base should stay in scope

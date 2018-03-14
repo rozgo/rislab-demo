@@ -23,6 +23,7 @@ containers::ControlVariables::init (madara::knowledge::KnowledgeBase & knowledge
   imu_sigma_accel_.set_name (".imu.sigma.accel", knowledge);
   orientation_.set_name (".orientation", knowledge);
   position_.set_name (".position", knowledge);
+  controls_clock_.set_name (".controls_clock", knowledge);
 }
 
 void
@@ -37,6 +38,7 @@ containers::ControlVariables::read (void)
     imu_sigma_accel = imu_sigma_accel_.to_record ().to_doubles ();
     orientation = orientation_.to_record ().to_doubles ();
     position = position_.to_record ().to_doubles ();
+    controls_clock = *controls_clock_;
   }
 }
 
@@ -52,6 +54,7 @@ containers::ControlVariables::write (void)
     imu_sigma_accel_.set (imu_sigma_accel);
     orientation_.set (orientation);
     position_.set (position);
+    controls_clock_ = controls_clock;
   }
 }
 
@@ -62,5 +65,6 @@ containers::ControlVariables::modify (void)
   imu_sigma_accel_.modify ();
   orientation_.modify ();
   position_.modify ();
+  controls_clock_.modify ();
 }
 
