@@ -10,6 +10,8 @@ var searchData=
   ['controls',['Controls',['../d4/ded/classplatforms_1_1threads_1_1Controls.html#a33cdc2fb861b9a3b4bd6f10c9fae48fa',1,'platforms::threads::Controls']]],
   ['controls_2ecpp',['Controls.cpp',['../db/d42/Controls_8cpp.html',1,'']]],
   ['controls_2eh',['Controls.h',['../df/dfe/Controls_8h.html',1,'']]],
+  ['controls_5fclock',['controls_clock',['../d7/d41/classcontainers_1_1ControlVariables.html#ab86121b372dc769c689e5a0a73e47c1c',1,'containers::ControlVariables']]],
+  ['controls_5fclock_5f',['controls_clock_',['../d7/d41/classcontainers_1_1ControlVariables.html#ad89c74f98fea2c4660dd5cfce1b717f3',1,'containers::ControlVariables']]],
   ['controlvariables',['ControlVariables',['../d7/d41/classcontainers_1_1ControlVariables.html#ac5ab074019e98f4645dc17f4592e1c23',1,'containers::ControlVariables::ControlVariables()'],['../d7/d41/classcontainers_1_1ControlVariables.html#a42c8ef09a069028ed0a3417935dcd06c',1,'containers::ControlVariables::ControlVariables(madara::knowledge::KnowledgeBase &amp;knowledge)']]],
   ['controlvariables',['ControlVariables',['../d7/d41/classcontainers_1_1ControlVariables.html',1,'containers']]],
   ['controlvariables_2ecpp',['ControlVariables.cpp',['../dc/dbf/ControlVariables_8cpp.html',1,'']]],

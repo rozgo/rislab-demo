@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">RISLab
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.0.2</span>
    </div>
   </td>
  </tr>
@@ -175,7 +175,7 @@ Private Attributes</h2></td></tr>
 
 <p>Default constructor. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00008">8</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
 
 </div>
 </div>
@@ -202,7 +202,7 @@ Private Attributes</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
 
 </div>
 </div>
@@ -239,7 +239,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>If you don't actually need access to the knowledge base, just scheduling things in madara::threads::Threader, then you can decide to delete this function or simply do nothing inside of the function. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00024">24</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,9 +268,20 @@ Private Attributes</h2></td></tr>
 <p>Executes the main thread logic. </p>
 <p>Executes the actual thread logic.</p>
 <p>Best practice is to simply do one loop iteration. If you want a long running thread that executes something frequently, see the madara::threads::Threader::runHz method in your controller. </p>
-<p>the MADARA logger is thread-safe, fast, and allows for specifying various options like output files and multiple output targets ( e.g., std::cerr, a system log, and a thread_output.txt file). You can create your own custom log levels or loggers as well.</p>
+<p>100x100m @ 5cm cells. 20 cells per meter. [100 x 20][100 x 20] = 2000x2000 4MB if 1B per cell, but why? We need 256 values per cell? For what?</p>
+<p>fill the map with random data</p>
+<p>500KB. We can make this smaller, and I'm not sure why 5cm accuracy makes sense, but this isn't my map. I just work here.</p>
+<p>Since timers on any operating system have a LOT of jitter, let's do these copies thousands of times and time the operation, then divide by the number of times we did the copy operation.</p>
+<p>Test 1: Full malloc, then memcpy of 4M bytes, and free 10000 times</p>
+<p>Test 2: memcpy of 4M bytes, 10000 times</p>
+<p>Test 3: Full malloc, then memcpy of 500K bytes, and free 10000 times</p>
+<p>Test 4: memcpy of 500K bytes, 10000 times</p>
+<p>Test 5: Duff's Device of 4M bytes, 10000 times</p>
+<p>Test 6: Duff's Device of 500K bytes, 10000 times</p>
+<p>Test 7: Byte-by-byte copy of 4MB bytes, 10000 times</p>
+<p>But wait... No way. Does this crazier version of Duff's device work?</p>
 
-<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00091">91</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +320,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/dac/namespaceplatforms.html">platforms</a></li><li class="navelem"><a class="el" href="../../d4/d2d/namespaceplatforms_1_1threads.html">threads</a></li><li class="navelem"><a class="el" href="../../da/d3a/classplatforms_1_1threads_1_1Mapping.html">Mapping</a></li>
-    <li class="footer">Generated on Tue Mar 13 2018 18:40:33 for RISLab by
+    <li class="footer">Generated on Wed Mar 14 2018 17:43:58 for RISLab by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

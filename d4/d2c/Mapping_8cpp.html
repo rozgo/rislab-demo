@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">RISLab
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.0.2</span>
    </div>
   </td>
  </tr>
@@ -104,12 +104,18 @@ $(document).ready(function(){initNavTree('d4/d2c/Mapping_8cpp.html','../../');})
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Mapping.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;gams/loggers/GlobalLogger.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d0e/Mapping_8h_source.html">Mapping.h</a>&quot;</code><br />
+<code>#include &quot;ace/High_Res_Timer.h&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Mapping.cpp:</div>
 <div class="dyncontent">
@@ -120,13 +126,65 @@ Include dependency graph for Mapping.cpp:</div>
 </div>
 </div>
 <p><a href="../../d4/d2c/Mapping_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8d2f22cbd6cc4201267eb3887c7ccedd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2c/Mapping_8cpp.html#a8d2f22cbd6cc4201267eb3887c7ccedd">duff_copy</a> (void *dest, void *source, size_t size_bytes)</td></tr>
+<tr class="memdesc:a8d2f22cbd6cc4201267eb3887c7ccedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies one buffer to another using the magic of Duff's Device.  <a href="#a8d2f22cbd6cc4201267eb3887c7ccedd">More...</a><br /></td></tr>
+<tr class="separator:a8d2f22cbd6cc4201267eb3887c7ccedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a8d2f22cbd6cc4201267eb3887c7ccedd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void duff_copy </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size_bytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies one buffer to another using the magic of Duff's Device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>destination buffer </td></tr>
+    <tr><td class="paramname">source</td><td>source buffer </td></tr>
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d4/d2c/Mapping_8cpp_source.html">Mapping.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ceed1ce8f89ba04e240f3818f1ccc961.html">platforms</a></li><li class="navelem"><a class="el" href="../../dir_a354161d4cde22aad1de9be51aac8c0b.html">threads</a></li><li class="navelem"><a class="el" href="../../d4/d2c/Mapping_8cpp.html">Mapping.cpp</a></li>
-    <li class="footer">Generated on Tue Mar 13 2018 18:40:33 for RISLab by
+    <li class="footer">Generated on Wed Mar 14 2018 17:43:58 for RISLab by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

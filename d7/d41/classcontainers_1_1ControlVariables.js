@@ -7,6 +7,8 @@ var classcontainers_1_1ControlVariables =
     [ "read", "d7/d41/classcontainers_1_1ControlVariables.html#a77de8d6ca6222a53d709f59a85d39aa7", null ],
     [ "write", "d7/d41/classcontainers_1_1ControlVariables.html#a869abf42ac8dcecdf7e69c3091b72aea", null ],
     [ "context_", "d7/d41/classcontainers_1_1ControlVariables.html#a0df590736ca35d3cd4159c1b982cfbb8", null ],
+    [ "controls_clock", "d7/d41/classcontainers_1_1ControlVariables.html#ab86121b372dc769c689e5a0a73e47c1c", null ],
+    [ "controls_clock_", "d7/d41/classcontainers_1_1ControlVariables.html#ad89c74f98fea2c4660dd5cfce1b717f3", null ],
     [ "imu_sigma_accel", "d7/d41/classcontainers_1_1ControlVariables.html#a50ade441fe9bedb3e3b23ebe2005b0ad", null ],
     [ "imu_sigma_accel_", "d7/d41/classcontainers_1_1ControlVariables.html#a68bb0c278bfe601cb1dadb881c3d45c7", null ],
     [ "orientation", "d7/d41/classcontainers_1_1ControlVariables.html#a22c01dedb12a6783b9e6faf1e608cbff", null ],
