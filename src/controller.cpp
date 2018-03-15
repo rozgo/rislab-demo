@@ -43,7 +43,7 @@ const std::string KNOWLEDGE_BASE_PLATFORM_KEY (".platform");
 bool plat_set = false;
 //std::string platform ("vrep-quad");
 std::string platform ("RisQuadcopterSim");
-std::string algorithm ("debug");
+std::string algorithm ("ExploreGpsDenied");
 std::vector <std::string> accents;
 
 // madara commands from a file
