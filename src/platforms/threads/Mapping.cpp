@@ -153,7 +153,6 @@ platforms::threads::Mapping::run (void)
                malloc_memcpy_1bitcells_time, memcpy_1bitcells_time,
                duffcopy_8bitcells_time, duffcopy_1bitcells_time,
                dumb_copy_8bitcells_time;
-  ACE_High_Res_Timer timer;
 
   unsigned char * byte_map_dest (0);
   unsigned char * bit_map_dest (0);
@@ -168,15 +167,18 @@ platforms::threads::Mapping::run (void)
    * Test 1: Full malloc, then memcpy of 4M bytes, and free 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    byte_map_dest = (unsigned char *)malloc (BIG_ARRAY);
-    memcpy (byte_map_dest, byte_map_source, BIG_ARRAY);
-    free (byte_map_dest);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      byte_map_dest = (unsigned char *)malloc (BIG_ARRAY);
+      memcpy (byte_map_dest, byte_map_source, BIG_ARRAY);
+      free (byte_map_dest);
+    }
+    timer.stop ();
+    timer.elapsed_time (malloc_memcpy_8bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (malloc_memcpy_8bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -188,13 +190,16 @@ platforms::threads::Mapping::run (void)
    * Test 2: memcpy of 4M bytes, 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    memcpy (byte_map_dest, byte_map_source, BIG_ARRAY);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      memcpy (byte_map_dest, byte_map_source, BIG_ARRAY);
+    }
+    timer.stop ();
+    timer.elapsed_time (memcpy_8bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (memcpy_8bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -206,15 +211,18 @@ platforms::threads::Mapping::run (void)
    * Test 3: Full malloc, then memcpy of 500K bytes, and free 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    bit_map_dest = (unsigned char *) malloc (NUM_BITS);
-    memcpy (bit_map_dest, bit_map_source, NUM_BITS);
-    free (bit_map_dest);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      bit_map_dest = (unsigned char *) malloc (NUM_BITS);
+      memcpy (bit_map_dest, bit_map_source, NUM_BITS);
+      free (bit_map_dest);
+    }
+    timer.stop ();
+    timer.elapsed_time (malloc_memcpy_1bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (malloc_memcpy_1bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -226,13 +234,16 @@ platforms::threads::Mapping::run (void)
    * Test 4: memcpy of 500K bytes, 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    memcpy (bit_map_dest, bit_map_source, NUM_BITS);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      memcpy (bit_map_dest, bit_map_source, NUM_BITS);
+    }
+    timer.stop ();
+    timer.elapsed_time (memcpy_1bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (memcpy_1bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -244,13 +255,16 @@ platforms::threads::Mapping::run (void)
    * Test 5: Duff's Device of 4M bytes, 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    duff_copy (byte_map_dest, byte_map_source, BIG_ARRAY);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      duff_copy (byte_map_dest, byte_map_source, BIG_ARRAY);
+    }
+    timer.stop ();
+    timer.elapsed_time (duffcopy_8bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (duffcopy_8bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -262,13 +276,16 @@ platforms::threads::Mapping::run (void)
    * Test 6: Duff's Device of 500K bytes, 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    duff_copy (bit_map_dest, bit_map_source, NUM_BITS);
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
+    {
+      duff_copy (bit_map_dest, bit_map_source, NUM_BITS);
+    }
+    timer.stop ();
+    timer.elapsed_time (duffcopy_1bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (duffcopy_1bitcells_time);
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
     gams::loggers::LOG_ALWAYS,
@@ -280,17 +297,20 @@ platforms::threads::Mapping::run (void)
    * Test 7: Byte-by-byte copy of 4MB bytes, 10000 times
    **/
 
-  timer.start ();
-  for (int i = 0; i < ITERATIONS; ++i)
   {
-    duff_copy (bit_map_dest, bit_map_source, NUM_BITS);
-    for (int j = 0; j < BIG_ARRAY; ++j)
+    ACE_High_Res_Timer timer;
+    timer.start ();
+    for (int i = 0; i < ITERATIONS; ++i)
     {
-      byte_map_dest[j] = byte_map_source[j];
+      duff_copy (bit_map_dest, bit_map_source, NUM_BITS);
+      for (int j = 0; j < BIG_ARRAY; ++j)
+      {
+        byte_map_dest[j] = byte_map_source[j];
+      }
     }
+    timer.stop ();
+    timer.elapsed_time (dumb_copy_8bitcells_time);
   }
-  timer.stop ();
-  timer.elapsed_time (dumb_copy_8bitcells_time);
 
 
   madara_logger_ptr_log (gams::loggers::global_logger.get (),
