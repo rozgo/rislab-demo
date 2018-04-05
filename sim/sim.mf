@@ -1,0 +1,28 @@
+time=3600;
+madara_debug=0;
+gams_debug=0;
+period=1;
+num_agents=9;
+sim="zone_coverage_line";
+area="small";
+border="region.0";
+num_coverages=0;
+checkpoint_prefix="checkpoint";
+
+/*
+checkpoint_strategy="on-loop";
+*/
+
+markers.info=0;
+markers.axis=0;
+markers.location=0;
+
+bunker.0.location=[40.44, -79.95, 0.0];
+
+/**
+ * airflow type:
+ * vortex
+ * turbulence
+ **/
+airflow.0.location=[40.44, -79.95, 0.0];
+airflow.0.type='turbulence';

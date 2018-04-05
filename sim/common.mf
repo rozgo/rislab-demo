@@ -40,3 +40,19 @@ sensor.coverage.origin=[40.443077,-79.940570, 0.0];
  * by vrep_move_thread_rate meters.
  **/
 .vrep_thread_move_speed = 2;
+
+group.protectors.members.size=7;
+group.protectors.members.0="agent.1";
+group.protectors.members.1="agent.3";
+group.protectors.members.2="agent.4";
+group.protectors.members.3="agent.5";
+group.protectors.members.4="agent.6";
+group.protectors.members.5="agent.7";
+group.protectors.members.6="agent.8";
+
+.platform="unreal";
+
+.zone_coverage_formation="line";
+.zone_coverage_buffer=2;
+.zone_coverage_distance=0.5;
+.hertz=1;

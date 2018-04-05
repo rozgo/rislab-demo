@@ -1,0 +1,15 @@
+.vrep_port=19909;
+
+.initial_lat=43.446131;
+.initial_lon=-79.940670;
+.initial_alt=4;
+
+agent.3.algorithm="zone coverage";
+
+agent.3.algorithm.args.formation=.zone_coverage_formation;
+agent.3.algorithm.args.assets="agent.0";
+agent.3.algorithm.args.protectors="protectors";
+agent.3.algorithm.args.enemies="agent.2";
+agent.3.algorithm.args.buffer=.zone_coverage_buffer;
+agent.3.algorithm.args.distance=.zone_coverage_distance;
+agent.3.algorithm.args.frame="gps";
